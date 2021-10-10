@@ -1,6 +1,11 @@
 """Main application file"""
 from flask import Flask
+import logging
 app = Flask(__name__)
+
+# Initialize Logger
+LOGGER = logging.getLogger()
+LOGGER.setLevel(logging.INFO)
 
 @app.route('/<random_string>')
 def returnBackwardsString(random_string):
